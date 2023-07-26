@@ -17,7 +17,7 @@ function App() {
 		try {
 			const res = await fetch(`https://api.weatherapi.com/v1/current.json?key=0196414b3b9144f9a26200354230103&q=${search}`);
 			const data = await res.json()
-			data && setData(data);
+			data !== null && data !== "" && setData(data);
 		} catch (error) {
 			toast.error(error.message)
 		}
@@ -28,7 +28,7 @@ function App() {
 		<>
 			<div className="container">
 				<div className='backDrop'>
-					{data ?
+					{data !== null ?
 						<div className="weather">
 							<div className="temp">{data.current.temp_c}<sup className="deg">o</sup></div>
 							<div className="place">
@@ -75,6 +75,7 @@ function App() {
 						<input
 							value={search}
 							onChange={(e) => setSearch(e.target.value)}
+							onKeyUp={(e) => e.key === 13 ? searchData : e}
 							type="text"
 							placeholder="Search city..." />
 						<button onClick={searchData}>Search</button>
