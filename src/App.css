@@ -12,188 +12,161 @@ html {
   font-family: Arial, Helvetica, sans-serif;
   overflow: hidden;
   font-family: "Mali", cursive;
-	user-select: none;
+  user-select: none;
+  overflow: hidden;
+  color: white;
 }
 
 ::-webkit-scrollbar {
   display: none;
 }
 
-.img {
+.container {
   background-image: url("https://i.ibb.co/zf10dL5/john-towner-Jg-Oe-Ru-GD-Y4-unsplash.jpg");
-  max-width: 100vw;
-  height: 100vh;
-	background-color: #040415;
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
-  resize: both;
-  filter: blur(8px);
-  z-index: 1;
 }
 
-.container {
-  height: 100vh;
-  z-index: 100;
-  color: white;
+.backDrop {
   width: 100vw;
-  border-radius: 50px;
+  height: 100vw;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .weather {
-  word-wrap: break-word;
-  position: absolute;
-  top: 35%;
-  width: 100%;
+  height: 65vh;
+  width: fit-content;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  margin: 0 30px;
 }
 
-.search {
-  background-color: rgb(0, 0, 0);
-  background-color: rgb(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  position: absolute;
-  bottom: 10px;
-  border-top-left-radius: 10rem;
-  border-top-right-radius: 10rem;
-  left: 10px;
-  display: flex;
-  justify-content: center;
-  padding: 50px;
-  width: 98.8%;
-}
-
-input {
-  color: white;
-  width: 50%;
-  outline: none;
-  font-size: 150%;
-  background-color: transparent;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  margin-right: 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.9);
-  padding: 10px 30px;
-}
-
-.icon {
-  margin: 0;
-  outline: none;
-  color: white;
-  font-size: 110%;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.9);
-  background-color: transparent;
-  pointer-events: none;
-}
-
-.btn {
-  cursor: pointer;
-  color: rgb(7, 7, 86);
-  font-weight: 700;
-  background-color: rgba(207, 177, 5, 0.887);
-  outline: none;
-  font-size: 150%;
-  padding: 10px 20px;
-  border-top-right-radius: 1.5rem;
-  border-bottom-right-radius: 1.5rem;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.9);
-}
-
-#temp {
-  font-size: 400%;
-  display: flex;
-  align-items: flex-start;
-}
-
-#time {
-  font-size: 60%;
-  margin-top: 20px;
-}
-
-.place {
-  display: flex;
-  flex-direction: column;
-  font-size: 200%;
-  margin-right: 30px;
+.temp {
+  font-size: 4rem;
+  margin: 10px;
 }
 
 .deg {
-  margin-left: 5px;
-  font-size: 50%;
-  margin-right: 30px;
+  font-size: 2.5rem;
+  margin: 0 10px;
+}
+
+.place {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+.loc {
+  font-size: 2.4rem;
+  margin-top: 1rem;
+}
+
+.time {
+  margin-top: 1rem;
+  font-size: 1.3rem;
 }
 
 .emoji {
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-direction: column;
-  font-size: 160%;
+  align-items: center;
+  margin: 10px;
+}
+
+.emjType {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+.search {
+  height: fit-content;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-bottom: 1px solid white;
+  padding: 15px;
+}
+
+input {
+  width: 80%;
+  background-color: transparent;
+  font-size: 1.5rem;
+  color: white;
+  outline: 0;
+  padding: 5px;
+  border: 0;
+}
+
+button{
+	padding: 12px 20px;
+	font-size: 1.5rem;
+	font-weight: 700;
+	border-radius: 50px;
+	background-color: #b79c08;
 }
 
 .cred {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
-  color: white;
-  font-size: 150%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: fixed;
+  bottom: 10px;
 }
 
-#emoji {
-  pointer-events: none;
-}
-
-#emjType {
-  margin-left: auto;
-  margin-top: 20px;
+.credText {
+  font-size: 2rem;
 }
 
 @media only screen and (max-width: 600px) {
-  input,
-  .btn,
-  .icon {
-    font-size: 110%;
+  .loc {
+    font-size: 1.4rem;
   }
-  input {
-    padding: 8px 10px;
+
+  .time {
+    font-size: 1rem;
   }
-  .search {
-    border-top-left-radius: 5rem;
-    border-top-right-radius: 5rem;
-    width: 96vw;
-  }
-  .weather {
-    font-size: 80%;
+
+  .emjType {
+    font-size: 1rem;
   }
   .cred {
-    left: 3.5rem;
+    flex-direction: column;
   }
-}
-
-@media only screen and (max-width: 400px) {
-  .place,
-  .deg {
-    margin-right: auto;
+  .credText {
+    font-size: 1.5rem;
+    letter-spacing: 0.15rem;
   }
-  .place {
-    margin-left: 10px;
-    margin-right: 15px;
-  }
-  #temp {
-    margin-left: 30px;
-  }
-  .emoji {
-    margin-right: 40px;
+  .logo {
+    max-height: 4rem !important ;
+    max-width: 4rem !important ;
   }
   .search {
-    width: 94.5vw;
+    width: 100%;
+    padding: 0;
+  }
+  .icon {
+    margin: 0 10px;
+  }
+  input {
+    margin: 0 10px;
+  }
+  button {
+    margin: 0 10px;
   }
 }
